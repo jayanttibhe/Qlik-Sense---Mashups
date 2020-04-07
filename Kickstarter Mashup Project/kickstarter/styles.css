@@ -1,0 +1,258 @@
+:root {
+    --main-light: #fff;
+    --offset-light: #F6F8FC;
+    --text-light: #2C3E50;
+
+    --offset-dark: #221F28;
+    --main-dark: #393541;
+    --text-dark: #F1F1F2;
+}
+
+html {
+    height: 100%
+}
+
+body {
+    height: 100%;
+    margin:0px;
+    display: flex;
+    user-select: none;
+}
+
+/* CSS FOR MAIN STRUCTURE */
+
+.column {
+    height: 100%;
+    display: flex;
+    flex-direction: column
+}
+
+#right-section {
+    flex: 6
+}
+
+#left-section {
+    flex: 1;
+    background-color: var(--offset-light);
+    color: var(--text-light)
+}
+
+#top-left {
+    height: 50px;
+}
+
+#bottom-right {
+    flex: 1;
+    background-color: var(--main-light);
+}
+
+#bottom-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation Bar */
+
+#nav {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: var(--main-light);
+    color: var(--text-light)
+}
+
+#nav li {
+    list-style: none;
+    padding: 0 15px;
+}
+
+/* Sidebar */
+
+.sidebar li {
+    list-style: none;
+    padding: 10px 0 10px 15px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.sidebar i {
+    margin-right: 10px;
+}
+
+.sidebar .nightmode {
+    margin-top: auto
+}
+
+/* Sidebar Closed CSS */
+
+#right-section.collapsed {
+    flex: 30
+}
+
+.sidebar li.collapsed {
+    padding: 10px 0 10px 0;
+    text-align: center;
+}
+
+.sidebar li a.collapsed {
+    padding: 10px 0 10px 0;
+}
+
+/* NightMode Toggle */
+
+#nav.night {
+    background-color: var(--main-dark);
+    color: var(--text-dark);
+}
+
+#bottom-right.night {
+    background-color: var(--main-dark);
+}
+
+#left-section.night {
+    background-color: var(--offset-dark);
+    color: var(--text-dark);
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 900px) {
+    .sidebar span {
+        display: none;
+    }
+
+    #nav .drawer-nav {
+        display: none;
+    }
+}
+
+
+#box {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+#left-box {
+    height: 90%;
+    width: 35%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column
+}
+
+#right-box {
+    height: 90%;
+    width: 70%;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: rgba(0,0,0,0.8) 0 0 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--offset-light);
+    color: var(--text-light);
+}
+
+#right-box.night {
+    background-color:var(--offset-dark);
+    color: var(--text-dark);
+}
+
+
+#trend-container {
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 15px;
+    box-shadow: rgba(0,0,0,0.8) 0 0 5px;
+    flex: 3;
+    background-color: var(--offset-light);
+}
+
+#trend-container.night {
+    background-color: var(--offset-dark);
+}
+
+#trend-chart {
+    position: relative;
+    margin: 10px;
+    flex: 1;
+}
+
+#text-object {
+    flex: 1;
+    margin: 5px;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+#sub-header {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+#chart-object {
+    flex: 5;
+    margin: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column
+}
+
+.text {
+    padding: 5px;
+    margin: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+#chart-wrapper {
+    position: relative;
+    flex: 1;
+    margin: 15px;
+}
+
+#chart-text {
+    display: flex;
+    padding: 6px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#chart-category {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.kpi {
+    margin: 5px;
+    border-radius: 15px;
+    box-shadow: rgba(0,0,0,0.8) 0 0 5px;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--offset-light);
+    color: var(--text-light);
+    display: flex
+}
+
+.kpi.night {
+    background-color: var(--offset-dark);
+    color: var(--text-dark)
+}
+
+.kpi-value {
+    font-size: 40px;
+    font-weight: bold;
+}

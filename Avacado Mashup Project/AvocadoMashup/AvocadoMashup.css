@@ -1,0 +1,118 @@
+html, body {
+	user-select: none;
+	height: 100%;
+	width: 100%;
+	font-family: 'Montserrat', sans-serif;
+	overflow: auto;
+}
+
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 20px;
+}
+
+.qvobject {
+	flex: 1 1 auto;
+	height: 300px;
+	min-width: 300px;
+	margin: 10px;
+	position: relative
+}
+
+.qvobjectbar {
+	flex: 1 1 auto;
+	height: 300px;
+	min-width: 300px;
+	margin: 10px;
+	position: relative
+}
+
+#popup {
+	background-color: #c3534b;
+	color: #FFFFFF;
+	position: fixed;
+	max-width: 250px;
+	padding: 10px;
+	margin: 10px;
+	bottom: 0;
+	right: 0;
+	display: none;
+	border-radius: 5px;
+	z-index: 6;
+	font-family: sans-serif;
+}
+
+.close {
+	cursor: pointer;
+	background: 0 0;
+	border: 0;
+	float: right;
+	font-size: 21px;
+	font-weight: 700;
+	line-height: 1;
+	color: #000;
+	text-shadow: 0 1px 0 #fff;
+	opacity: .2;
+	position: absolute;
+	right: 9px;
+	top: 7px;
+}
+
+.close:hover {
+	opacity: .5;
+}
+
+#popupText {
+	margin-right: 23px;
+}
+
+.header {
+	display: flex;
+	height: 40px;
+	font-size: 25px;
+	padding: 5px 50px;
+	align-items: center;
+	color: white;
+	 background-image: linear-gradient(to right,#56ab2f, #a8e063);
+	font-weight: 700;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.title {
+	margin-right: auto
+}
+
+a {
+	padding-right: 35px;
+	text-decoration: none;
+	font-size: 15px;
+	color: white;
+}
+
+a .current {
+	text-decoration: none;
+}
+
+
+/* Button styles end */
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+	padding: 0;
+	margin: 0;
+	z-index: 99;
+	cursor: pointer
+}
+
+.my-float{
+	margin-top:22px;
+}

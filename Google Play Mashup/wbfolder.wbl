@@ -1,0 +1,10 @@
+GooglePlayMashup.qext;
+GooglePlayMashup.js;
+GooglePlayMashup.html;
+GooglePlayMashup.css;
+app/app.js;
+app/header/bookmarks.js;
+app/header/nav.js;
+app/header/selections.js;
+app/qlik/charts.js;
+app/qlik/filters.js;

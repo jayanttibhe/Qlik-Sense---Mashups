@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Picasso JS Chart</title>
+    <script src="https://unpkg.com/picasso.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.js"
+      integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      #container {
+        height: 80%;
+        width: 80%;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script>
+
+    function scatter() { 
+       picasso.chart({
+        element: document.querySelector("#container"),
+        data: [
+          {
+            type: "matrix",
+            data: [
+              ["ID", "Year", "Region", "Sales", "Margin"],
+              [1, "2010", "New York", 1106, 7],
+              [2, "2010", "Chicago", 644, 53],
+              [3, "2010", "California", 147, 64],
+              [4, "2010", "Denver", 1299, 47],
+              [5, "2010", "Dallas", 430, 32],
+              [6, "2010", "Los Angeles", 235, 13],
+              [7, "2011", "New York", 800, 20],
+              [8, "2011", "Chicago", 340, 12],
+              [9, "2011", "California", 249, 69],
+              [10, "2011", "Denver", 999, 17],
+              [11, "2011", "Dallas", 630, 42],
+              [12, "2011", "Los Angeles", 535, 35]
+            ]
+          }
+        ],
+        settings: {
+          scales: {
+            y: {
+              data: {
+                field: "Sales"
+              },
+              invert: true,
+              expand: 0.3
+            },
+            x: {
+              data: {
+                field: "Margin"
+              },
+              expand: 0.3
+            },
+            col: {
+              data: { extract: { field: "Year" } },
+              type: "color"
+            }
+          },
+          interactions: [
+            {
+              type: "native",
+              events: {
+                mousemove(e) {
+                  this.chart.component("tooltipKey").emit("show", e);
+                },
+                mouseleave() {
+                  this.chart.component("tooltipKey").emit("hide");
+                }
+              }
+            },
+            {
+              type: "native",
+              events: {
+                mousedown: function(e) {
+                  if (e.altKey) {
+                    this.chart.brush("lasso-example").end();
+                  }
+                  this.chart
+                    .component("lasso")
+                    .emit("lassoStart", {
+                      center: { x: e.clientX, y: e.clientY }
+                    });
+                },
+                mousemove: function(e) {
+                  this.chart
+                    .component("lasso")
+                    .emit("lassoMove", {
+                      center: { x: e.clientX, y: e.clientY }
+                    });
+                },
+                mouseup: function(e) {
+                  this.chart
+                    .component("lasso")
+                    .emit("lassoEnd", {
+                      center: { x: e.clientX, y: e.clientY }
+                    });
+                }
+              }
+            }
+          ],
+          components: [
+            {
+              type: "legend-cat",
+              scale: "col",
+              dock: "top",
+              brush: {
+                trigger: [
+                  {
+                    contexts: ["lasso-example"],
+                    on: "tap",
+                    action: "toggle"
+                  }
+                ],
+                consume: [
+                  {
+                    context: "lasso-example",
+                    style: {
+                      inactive: {
+                        opacity: 0.4
+                      },
+                      active: {
+                        opacity: 1
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              type: "axis",
+              scale: "y",
+              dock: "left"
+            },
+            {
+              type: "axis",
+              scale: "x",
+              dock: "bottom"
+            },
+            {
+              type: "point",
+              data: {
+                extract: {
+                  field: "Region",
+                  props: {
+                    y: { field: "Sales" },
+                    x: { field: "Margin" },
+                    fill: { field: "Year" },
+                    brush: { field: "ID" },
+                    region: { field: "Region" }
+                  }
+                }
+              },
+              settings: {
+                x: { scale: "x" },
+                y: { scale: "y" },
+                opacity: 0.8,
+                fill: { scale: "col" }
+              },
+              key: "p",
+              brush: {
+                trigger: [
+                  {
+                    contexts: ["lasso-example"],
+                    data: ["brush"]
+                  }
+                ],
+                consume: [
+                  {
+                    context: "lasso-example",
+                    style: {
+                      inactive: {
+                        opacity: 0.4
+                      },
+                      active: {
+                        opacity: 1,
+                        stroke: "#333",
+                        strokeWidth: 2
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              key: "lasso",
+              type: "brush-lasso",
+              settings: {
+                brush: {
+                  components: [
+                    {
+                      key: "p",
+                      contexts: ["lasso-example"],
+                      data: ["brush"]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              key: "tooltipKey",
+              type: "tooltip",
+              settings: {
+                extract: ({ node }) => ({
+                  region: node.data.region.value
+                }),
+                content: ({ h, data }) => {
+                  rows = [];
+                  data.map(datum =>
+                    rows.push(h("div", {}, "Region: " + datum.region))
+                  );
+                  return h("div", {}, rows);
+                }
+              }
+            },
+            {
+              type: "text",
+              text: "Sales & Margin by Region for 2010 and 2011",
+              layout: {
+                dock: "top"
+              }
+            },
+            {
+              type: "text",
+              text: "Sales",
+              layout: {
+                dock: "left"
+              }
+            },
+            {
+              type: "text",
+              text: "Margin",
+              layout: {
+                dock: "bottom"
+              }
+            }
+          ]
+        }
+      });
+    }
+
+    scatter()
+
+    $(window).on('resize', function(){
+      scatter()
+    })
+
+
+    </script>
+  </body>
+</html>

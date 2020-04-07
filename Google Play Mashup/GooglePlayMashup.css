@@ -1,0 +1,266 @@
+:root {
+    /* Nav */
+    --header-color: #fff;
+    --left-color: #fff;
+    --right-color: #fff;
+    /* Filters */
+    --filter-panel-color: #ffffff00;
+    --filters-color: #ffffff00;
+    --filter-border-color: #36454f;
+    --filter-text-color: #36454f;
+    /* Search Text */
+    --search-color: #36454f;
+    /* Icons */
+    --icon-color: #36454f;
+
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #f0f0f0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Nav */
+
+.nav-bar {
+    height: 42px;
+    background: linear-gradient(to right, var(--left-color),var(--right-color));
+    border-bottom: 1px solid #D3D3D3;
+    display: flex;
+    align-items: center;
+}
+
+/* Search */
+
+.wrap {
+    display: flex;
+    width: 20%;
+    margin: 5px;
+    padding: 0px 5px;
+}
+
+.searchTerm {
+    background-color: transparent;
+    border: 0px solid;
+    width: 100%;
+    font-size: 12px;
+    margin: 2px;
+    color: var(--search-color);
+}
+
+::placeholder {
+    color: var(--search-color);
+    font-size: 14px;
+  }
+  
+button {
+    border: none;
+    background: none;
+}
+
+.navbar span {
+    padding: 0px 5px;
+}
+
+/* Filter Panel */
+
+.filters {
+    padding: 5px;
+    background-color: var(--filter-panel-color);
+    display: flex;
+}
+
+.filters .dropdown {
+    margin: 0px 5px;
+}
+
+.filters .dropdown .dropdown-toggle {
+    height: 30px;
+    font-size: 12px;
+    background-color: var(--filter-panel-color);
+    border: 1px solid var(--filter-border-color);
+    color: var(--filter-text-color);
+    font-weight: 200;
+}
+
+.filters .dropdown .dropdown-toggle .filter-option .filter-option-inner {
+    text-align: center;
+    align-items: top;
+    font-size: 12px;
+}
+
+.bs-actionsbox .btn-group button {
+    font-size: 12px !important;
+}
+
+.bs-container .dropdown-menu {
+    font-size: 12px !important;
+}
+
+.bs-container .dropdown-menu .form-control {
+    font-size: 12px !important;
+    padding-left: 5px;
+    height: calc(1.75rem);
+}
+
+/* Icons */
+
+#undo {
+    margin-left: auto;
+}
+
+.icon {
+    color: var(--icon-color);
+    padding: 0px 10px;
+}
+
+#selections {
+    padding-right: 20px;
+}
+
+/* Heading */
+.heading {
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 20px;
+}
+
+.notification {
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+}
+
+.notification .badge {
+    position: absolute;
+    top: -10px;
+    right: 5px;
+    padding: 4px 6px;
+    border-radius: 50%;
+    background: red;
+    color: white
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1284px) {
+    .control {
+        display: none;
+    }
+    .filter-panel {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrap {
+        display: none;
+    }
+
+    #bookmark {
+        margin-left: auto;
+    }
+}
+
+/* Bookmark */
+
+.list-group {
+    padding-top: 20px
+}
+
+.list-group-item {
+    display: flex;
+    align-items: center
+}
+
+.list-group-item .bm-title-text {
+    cursor: pointer;
+}
+
+.list-group-item .bm-title-desc {
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.list-group .list-group-item i {
+    cursor: pointer;
+    margin-left: auto;
+    padding: 0 10px;
+}
+
+
+/* Current Selections */
+
+#currSelections {
+    display: flex;
+    flex-direction: column
+}
+
+.selected-field-container {
+    font-size: 14px;
+    display: flex
+}
+
+.selected-field-container .selected-field {
+    padding-right: 10px;
+    font-weight: bold
+}
+
+.selected-field-container .clear-field {
+    font-size: 18px;
+    margin-left: auto;
+    font-weight: bold;
+    color: red;
+    padding-right: 20px;
+    cursor: pointer
+}
+
+
+/* Search CSS */
+
+::placeholder {
+    color: #7f8c8d;
+    opacity: 0.5;
+}
+.ui-menu { 
+    border-radius: 10px;
+}
+
+.ui-menu .ui-menu-item {
+    font-family: 'Open Sans', sans-serif;
+    border-bottom: #D3D3D3 0.5px solid;
+}
+
+.ui-menu .ui-menu-item .search-value {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.ui-autocomplete {
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 20px;
+}
+
+.dropdown-menu {
+    max-height: 250px;
+}
+
+/* Placeholder Object CSS */
+.qvplaceholder, .qvobject {
+    height: 260px;
+    background-color: white;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.20)  
+}
+
+.qvchart {
+    height: 400px;
+    background-color: white;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.20)  
+}
+
+
+

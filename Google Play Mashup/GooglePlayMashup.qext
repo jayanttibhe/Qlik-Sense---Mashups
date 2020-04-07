@@ -1,0 +1,10 @@
+{
+	"type": "mashup",
+	"name": "GooglePlayMashup",
+	"description": "Admin Dashboard Template",
+	"author": "Luke Reilly",
+	"version": "1.0.0",
+	"dependencies": {
+		"qlik-sense": ">=3.0.x"
+	}
+}
