@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard Shell</title>
+    <!-- Load CSS -->
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <!-- Load Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Load Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- JQuery & Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- Load JS File -->
+    <script src="./index.js"></script>
+</head>
+
+<body>
+    <!-- Left Hand Section -->
+    <section class="column" id="left-section">
+        <!-- Top Left Bar -->
+        <div id="top-left"></div>
+        <!-- Sidebar -->
+        <div class="sidebar" id="bottom-left">
+            <li>
+                <a href="#">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-table"></i>
+                    <span>Statistics</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Trends</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+            <li class="nightmode">
+                <a href="#">
+                    <i class="fas fa-moon"></i>
+                    <span>Nightmode</span>
+                </a>
+            </li>
+        </div>
+    </section>
+    <!-- Right Hand Section -->
+    <section class="column" id="right-section">
+        <!-- Nav Bar -->
+        <nav id="nav">
+            <li>
+                <i class="fas fa-align-left fa-md drawer-nav"></i>
+            </li>
+            <li class="search-bar">
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">
+                            <i class="fas fa-search fa-md"></i></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Search you data.."
+                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
+            </li>
+            <li>
+                <i class="fas fa-bell fa-md" data-toggle="tooltip" data-placement="bottom" title="Notifications" data-animation="true" data-delay='{"show":"1000", "hide":"100"}'></i>
+            </li>
+            <li>
+                <i class="fas fa-bookmark fa-md" data-toggle="tooltip" data-placement="bottom" title="Bookmarks" data-animation="true" data-delay='{"show":"1000", "hide":"100"}'></i>
+            </li>
+        </nav>
+        <!-- Main Body -->
+        <div id="bottom-right"></div>
+    </section>
+</body>
+
+</html>

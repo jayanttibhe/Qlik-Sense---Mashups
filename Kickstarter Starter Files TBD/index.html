@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>KickStarter Analysis</title>
+    <!-- Load CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Load JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Load Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <!-- Load Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <!-- Load JS -->
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <!-- Left Hand Section -->
+    <section class="column" id="left-section">
+      <!-- Top Left Bar -->
+      <div id="top-left"></div>
+      <!-- Sidebar -->
+      <div class="sidebar" id="bottom-left">
+        <li>
+          <a href="index.html">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="nightmode">
+          <a href="#">
+            <i class="fas fa-moon"></i>
+            <span>Night Mode</span>
+          </a>
+        </li>
+      </div>
+    </section>
+
+    <!-- Right Hand Section -->
+    <section class="column" id="right-section">
+      <!-- Navigation Bar -->
+      <ui id="nav" role="navigation">
+        <li>
+          <i class="drawer-nav fas fa-align-left fa-md"></i>
+        </li>
+      </ui>
+      <!-- Main Content Body -->
+      <div id="bottom-right">
+        <div id="box">
+          <div id="left-box">
+            <div class="kpi" id="kpi1"></div>
+            <div class="kpi" id="kpi2"></div>
+            <div class="kpi" id="kpi3"></div>
+            <div id="trend-container">
+              <div id="trend-chart"></div>
+            </div>
+          </div>
+          <div id="right-box">
+            <div id="text-object">
+              KickStarter Analysis
+              <div id="sub-header">Data Last Loaded at: ....</div>
+            </div>
+            <div id="chart-object">
+              <div id="chart-text">
+                <span class="text" id="chart-category">CATEGORY</span>
+                <span class="text" id="chart-year">YEAR LAUNCHED</span>
+              </div>
+              <div id="chart-wrapper"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+:root {
+    --nav-light: #fbfdfd;
+    --sidebar-light: #fbfdfd;
+    --main-light: #fff;
+    --text-light: #2C3E50;
+
+    --nav-dark: #221F28;
+    --sidebar-dark: #221F28;
+    --main-dark: #393541;
+    --text-dark: #F1F1F2;
+}
+
+html {
+    height: 100%
+}
+
+body {
+    height: 100%;
+    margin:0px;
+    display: flex;
+}
+
+/* CSS FOR MAIN STRUCTURE */
+
+.column {
+    height: 100%;
+    display: flex;
+    flex-direction: column
+}
+
+#right-section {
+    flex: 6
+}
+
+#left-section {
+    flex: 1;
+    background-color: var(--nav-light);
+    color: var(--text-light)
+}
+
+#top-left {
+    height: 50px;
+}
+
+#bottom-right {
+    flex: 1;
+    background-color: var(--main-light);
+}
+
+#bottom-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation Bar */
+
+#nav {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: var(--nav-light);
+    color: var(--text-light)
+}
+
+#nav li {
+    list-style: none;
+    padding: 0 15px;
+}
+
+.search-bar {
+    margin: 15px auto 0 auto;
+    width: 40em;
+}
+
+/* Sidebar */
+
+.sidebar li {
+    list-style: none;
+    padding: 10px 0 10px 15px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.sidebar i {
+    margin-right: 10px;
+}
+
+.sidebar .nightmode {
+    margin-top: auto
+}
+
+/* Sidebar Closed CSS */
+
+#right-section.collapsed {
+    flex: 30
+}
+
+.sidebar li.collapsed {
+    padding: 10px 0 10px 0;
+    text-align: center;
+}
+
+.sidebar li a.collapsed {
+    padding: 10px 0 10px 0;
+}
+
+/* NightMode Toggle */
+
+#nav.night {
+    background-color: var(--nav-dark);
+    color: var(--text-dark);
+}
+
+#bottom-right.night {
+    background-color: var(--main-dark);
+}
+
+#left-section.night {
+    background-color: var(--sidebar-dark);
+    color: var(--text-dark);
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 900px) {
+    .sidebar span {
+        display: none;
+    }
+
+    #nav .drawer-nav {
+        display: none;
+    }
+}
